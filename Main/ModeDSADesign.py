@@ -1,0 +1,51 @@
+from PyQt6 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(404, 301)
+        self.gridLayout = QtWidgets.QGridLayout(Form)
+        self.gridLayout.setObjectName("gridLayout")
+        self.label = QtWidgets.QLabel(parent=Form)
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 3, 1, 1, 1)
+        self.btnEncryptMode = QtWidgets.QPushButton(parent=Form)
+        self.btnEncryptMode.setMaximumSize(QtCore.QSize(200, 50))
+        self.btnEncryptMode.setMinimumSize(QtCore.QSize(150, 30))
+        self.btnEncryptMode.setObjectName("btnEncryptMode")
+        self.gridLayout.addWidget(self.btnEncryptMode, 1, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignJustify)
+        self.btnDecryptMode = QtWidgets.QPushButton(parent=Form)
+        self.btnDecryptMode.setMaximumSize(QtCore.QSize(200, 50))
+        self.btnDecryptMode.setMinimumSize(QtCore.QSize(150, 30))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.btnDecryptMode.setFont(font)
+        self.btnDecryptMode.setObjectName("btnDecryptMode")
+        self.gridLayout.addWidget(self.btnDecryptMode, 2, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignJustify)
+        self.label_2 = QtWidgets.QLabel(parent=Form)
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 2, 2, 1, 1)
+        self.labelMode = QtWidgets.QLabel(parent=Form)
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.labelMode.setFont(font)
+        self.labelMode.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labelMode.setObjectName("labelMode")
+        self.gridLayout.addWidget(self.labelMode, 0, 1, 1, 1)
+        self.label_3 = QtWidgets.QLabel(parent=Form)
+        self.label_3.setText("")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Mode DSA"))
+        self.btnEncryptMode.setText(_translate("Form", "Шифрование"))
+        self.btnDecryptMode.setText(_translate("Form", "Расшифрование"))
+        self.labelMode.setText(_translate("Form", "Выберите режим"))
